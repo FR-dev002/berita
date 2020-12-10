@@ -1,0 +1,54 @@
+1. set database
+2. jalankan php artisan migrate
+3. jalankan php artisan db:seed
+
+
+
+// Get all
+curl -v http://localhost:8000/berita/all  
+
+// Delete 
+curl -X DELETE http://localhost:8000/berita/2   
+
+// Pagination
+curl -v http://localhost:8000/berita/pagination
+
+
+
+// Post Data
+ curl \                                         
+-F "title= Fikri ramadhan" \           
+-F "sort_title= Fikri" \
+-F "image=@/home/inarts-fikri/Documents/logo.png" \
+-F "author= 1" \
+-F "wartawan=2" \
+-F "description=Fikri ramadhan sudah nikah" \
+-F "sort_description=Fikri" \
+-F "headlines=1" \
+-F "publish=1" \
+-F "thumbnail=@/home/inarts-fikri/Documents/logo.png" \
+-F "categories[]=1" \
+-F "categories[]=2" \
+-F "tags[]=1" \
+localhost:8000/berita/store 
+
+
+
+
+// Update Data
+ curl \
+-F "title= Fikri ramadhan" \           
+-F "sort_title= Fikri" \
+-F "image=@/home/inarts-fikri/Documents/logo.png" \
+-F "author= 1" \
+-F "wartawan=2" \
+-F "description=Fikri ramadhan sudah nikah" \
+-F "sort_description=Fikri" \
+-F "headlines=1" \
+-F "publish=1" \
+-F "thumbnail=@/home/inarts-fikri/Documents/logo.png" \
+-F "categories[]=1" \
+-F "categories[]=2" \
+-F "tags[]=1" \
+-F "berita_id=3" \
+localhost:8000/berita/update
